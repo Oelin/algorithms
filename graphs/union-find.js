@@ -44,7 +44,7 @@ function network() {
     if (sx > sy) {
       this.ids[rx] = ry
       this.sizes[ry] += sx
-    } else if (sy > sx) {
+    } else {
       this.ids[ry] = rx
       this.sizes[rx] += sy
     }
