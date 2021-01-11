@@ -10,7 +10,7 @@ function network() {
   // create n new users
   
   this.init = function(n) {
-   this.ids = Array(n).fill(0)
+    this.ids = Array(n).fill(0)
     .map((e, i) => i)
     
     this.sizes = Array(n).fill(1)
