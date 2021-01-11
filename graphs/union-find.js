@@ -25,6 +25,7 @@ function network() {
   }
   
   // are two users connected?
+  // Note: path compression would remove bottle necks here
   
   this.find = function(x, y) {
    return this.root(x) == this.root(y) 
