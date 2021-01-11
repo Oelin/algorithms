@@ -42,6 +42,9 @@ function network() {
     if (rx == ry)
       return
     
+    // subtree size comparison to acheive O(log n)
+    // worst case
+    
     if (sx > sy) {
       this.ids[rx] = ry
       this.sizes[ry] += sx
