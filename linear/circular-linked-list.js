@@ -22,13 +22,13 @@ function circle() {
     n = node(value)
 
     if (this.empty()) {
-      n.next = new
+      n.next = n
     } else {
       n.next = this.head()
       this.last.next = n
     }
 
-    this.last = new
+    this.last = n
     this.length++
   }
 
