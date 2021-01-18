@@ -19,13 +19,13 @@ function circle() {
   }
 
   this.append = function(value) {
-    new = node(value)
+    n = node(value)
 
     if (this.empty()) {
-      new.next = new
+      n.next = new
     } else {
-      new.next = this.head()
-      this.last.next = new
+      n.next = this.head()
+      this.last.next = n
     }
 
     this.last = new
@@ -33,9 +33,9 @@ function circle() {
   }
 
   this.prepend = function(value) {
-    new = node(value)
-    new.next = this.head()
-    this.last.next = new
+    n = node(value)
+    n.next = this.head()
+    this.last.next = n
 
     this.length++
   }
