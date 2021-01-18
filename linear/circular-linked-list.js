@@ -93,5 +93,5 @@ function listToCircle(list) {
   let c = new circle()
   list.forEach(value => c.append(value))
   
-  return list
+  return c
 }
