@@ -84,4 +84,6 @@ function circle2List(circle) {
     list.push(current.value)
     current = current.next
   }
+  
+  return list
 }
