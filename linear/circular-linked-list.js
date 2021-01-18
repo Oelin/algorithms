@@ -74,3 +74,14 @@ function circle() {
     this.length--
   }
 }
+
+
+function circle2List(circle) {
+  let list = []
+  let current = circle.head()
+  
+  for (let i=0; i < circle.length; i++) {
+    list.push(current.value)
+    current = current.next
+  }
+}
