@@ -14,8 +14,8 @@ function paths(r, c, x, y) {
     let [cx, cy] = q.shift()
       
     if (cx != x || cy != y) {
-      if (cx + 1 < w) q.push([cx + 1, cy]) // right
-      if (cy + 1 < h) q.push([cx, cy + 1]) // down
+      if (cx + 1 < c) q.push([cx + 1, cy]) // right
+      if (cy + 1 < r) q.push([cx, cy + 1]) // down
     } else {
        n++
     }
