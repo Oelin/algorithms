@@ -31,8 +31,8 @@ function paths(r, c, x, y, cx=0, cy=0) {
   if (cx == x && cy == y)
     return 1
   
-  return (cx + 1 < c) && paths(r, c, x, y, cx + 1, cy)
-       + (cy + 1 < r) && paths(r, c, x, y, cx, cy + 1)
+  return ((cx + 1 < c) && paths(r, c, x, y, cx + 1, cy))
+       + ((cy + 1 < r) && paths(r, c, x, y, cx, cy + 1))
 }
 
 
