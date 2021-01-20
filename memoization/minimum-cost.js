@@ -3,7 +3,7 @@
 // stair case
 
 function min_cost(steps) {
-    if (steps.length == 0) return 0xffffffff
-    if (steps.length == 1) return array[0]
-    return steps[0] + Math.min(min_cost(steps.slice(1)), min_cost(steps.slice(2)))
+  if (steps.length == 0) return 0xffffffff
+  if (steps.length == 1) return array[0]
+  return steps[0] + Math.min(min_cost(steps.slice(1)), min_cost(steps.slice(2)))
 }
