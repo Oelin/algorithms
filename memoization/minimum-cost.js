@@ -1,6 +1,6 @@
 // On a staircase, the ith step has some non-negative cost assigned to it. Once you pay the cost, 
 // you can either climb one or two steps. Find the minimum cost needed to reach the top of a given
-// stair case
+// staircase.
 
 function min_cost(steps) {
   if (steps.length == 0) return 0xffffffff
