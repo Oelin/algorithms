@@ -43,8 +43,11 @@ function heap() {
   // deletes the root
   
   this.unroot = function(n) {
+    let root = nodes[0]
     nodes[0] = nodes.pop()
     siftDown(0)
+    
+    return root
   }
     
   this.toList = function() {
