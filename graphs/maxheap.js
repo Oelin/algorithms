@@ -18,6 +18,13 @@ function heap() {
     nodes.push(value)
     heapify(nodes.length - 1)
   }
+  
+  // deletes the root
+  
+  this.unroot = function(n) {
+    nodes[0] = nodes.pop()
+    heapify(0)
+  }
     
   this.toList = function() {
     return nodes
