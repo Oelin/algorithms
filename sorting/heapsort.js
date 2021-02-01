@@ -58,7 +58,12 @@ function heapsort(array) {
   // create a max heap from the array
   
   let h = new heap()
-  array.forEach(e => h.insert(e))
+  array.forEach(h.insert)
   
+  // the array in descending order can be
+  // recovered by repeatedly unrooting
   
+  let sorted = Array(array.length)
+  .fill(0)
+  .map(h.unroot)
 }
