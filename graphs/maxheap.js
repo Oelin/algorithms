@@ -3,7 +3,7 @@
 function heap() {
   let nodes = []
 
-  function heapify(n) {
+  function siftUp(n) {
     let node
     let parent
 
@@ -13,17 +13,38 @@ function heap() {
       n = parent
     }
   }
+  
+  function siftDown(n) {
+    let node
+    let left, right, maxchild
     
+    while (true) {
+      node = nodes[n]
+      left = nodes[2 * n + 1]
+      right = nodes[2 * n + 2]
+      maxchild = Math.max(left, right)
+      
+      if (node <= maxchild) {
+        maxchild = 2*n + 1 + (maxchild == right)
+        nodes[n] = nodes[maxchild]
+        nodes[maxchild] = node
+        n = maxchild
+      } else {
+        break
+      }
+    }
+  }
+  
   this.insert = function(value) {
     nodes.push(value)
-    heapify(nodes.length - 1)
+    siftUp(nodes.length - 1)
   }
   
   // deletes the root
   
   this.unroot = function(n) {
     nodes[0] = nodes.pop()
-    heapify(0)
+    siftDown(0)
   }
     
   this.toList = function() {
