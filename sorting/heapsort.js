@@ -63,7 +63,7 @@ function heapsort(array) {
   // the array in descending order can be
   // recovered by repeatedly unrooting
   
-  let sorted = Array(array.length)
+  return Array(array.length)
   .fill(0)
   .map(h.unroot)
 }
