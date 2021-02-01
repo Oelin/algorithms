@@ -4,35 +4,36 @@
 
 function heap() {
   let nodes = []
-
-  function siftUp(n) {
-    let node
-    let parent
-
-    while ((node = nodes[n]) > nodes[parent = Math.floor((n - 1) / 2)]) {
-      nodes[n] = nodes[parent]
-      nodes[parent] = node
-      n = parent
-    }
+  
+  function swap(i, j) {
+    let tmp = nodes[i]
+    nodes[i] = nodes[j]
+    nodes[j] = tmp
   }
   
   function siftDown(n) {
-    let node
-    let left, right, maxchild
+    let left = 2*n + 1
+    let right = 2*n + 2
+    let child
     
-    while (true) {
-      node = nodes[n]
-      left = nodes[2 * n + 1] || -0xffffff
-      right = nodes[2 * n + 2] || -0xffffff
-      maxchild = left > right ? (2*n + 1) : (2*n + 2)
+    if (left < nodes.length && right < nodes.length) {
+      child = nodes[left] > nodes[right] ? left : right
+    } else {
+      child = left > nodes.length ? right : left
+    }
 
-      if (node <= nodes[maxchild]) {
-        nodes[n] = nodes[maxchild]
-        nodes[maxchild] = node
-        n = maxchild
-      } else {
-        break
-      }
+    if (nodes[child] != undefined && nodes[n] <= nodes[child]) {
+      swap(n, child)
+      siftDown(child)
+    }
+  }
+
+  function siftUp(n) {
+    let parent = Math.floor((n - 1) / 2)
+
+    if (nodes[n] > nodes[parent]) {
+      swap(n, parent)
+      siftUp(parent)
     }
   }
   
