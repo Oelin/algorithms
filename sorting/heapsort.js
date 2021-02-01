@@ -1,3 +1,7 @@
+// todo: reimplement this nicely later
+// this was just for learning purposes, not anything
+// usable.
+
 function heap() {
   let nodes = []
 
@@ -18,12 +22,11 @@ function heap() {
     
     while (true) {
       node = nodes[n]
-      left = nodes[2 * n + 1]
-      right = nodes[2 * n + 2]
-      maxchild = Math.max(left, right)
-      
-      if (node <= maxchild) {
-        maxchild = 2*n + 1 + (maxchild == right)
+      left = nodes[2 * n + 1] || -0xffffff
+      right = nodes[2 * n + 2] || -0xffffff
+      maxchild = left > right ? (2*n + 1) : (2*n + 2)
+
+      if (node <= nodes[maxchild]) {
         nodes[n] = nodes[maxchild]
         nodes[maxchild] = node
         n = maxchild
