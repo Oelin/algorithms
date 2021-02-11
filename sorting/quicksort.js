@@ -10,7 +10,7 @@ function quicksort(array) {
 	
 	let pivot = Math.floor(array.length / 2)
 	let p = array[pivot]
-  let left = []
+        let left = []
 	let right = []
 	
 	array.forEach((e, i) => {
